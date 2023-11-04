@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+}
+
+.main-menu {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  display: flex;
+  gap: 32px;
+  padding: 0 32px;
+  background: #fff;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+.main-menu .menu-title span {
+  width: 14px;
+  display: flex;
+  transition: all 200ms ease;
+}
+
+.main-menu .menu-container:hover span {
+  transform: rotateZ(-180deg);
+}
+
+.main-menu .menu-items ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+.main-menu .menu-title {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 200ms ease;
+}
+
+.main-menu .menu-container:hover .menu-title {
+  background: #edf6f9;
+}
+
+.main-menu .menu-items .content {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  left: 0;
+  top: 42px;
+  min-width: 500px;
+  padding: 24px 32px;
+  display: flex;
+  gap: 32px;
+  background: #fff;
+  z-index: 400;
+  transition: all 200ms ease;
+}
+
+.main-menu .content h3,
+.main-menu-mobile .content h3 {
+  margin-top: 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.main-menu .content .group,
+.main-menu-mobile .content .group {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 16px;
+  display: inline-block;
+  border-radius: 4px;
+  transition: all 200ms ease;
+}
+
+.main-menu .content .group:hover {
+  background: #edf6f9;
+}
+
+.main-menu .content .title,
+.main-menu-mobile .content .title {
+  font-weight: bold;
+}
+
+.main-menu .content p,
+.main-menu-mobile .content p {
+  margin: 5px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.main-menu .content .left,
+.main-menu .content .right {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.main-menu .menu-items .content.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.main-menu .menu-bg {
+  position: absolute;
+  min-width: 500px;
+  box-shadow: 0 4px 30px -8px rgba(0, 0, 0, 0.3);
+  height: 0;
+  left: 0;
+  top: 42px;
+  background: #fff;
+  transition: all 200ms ease;
+}
+
+.main-menu .content img {
+  width: 550px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.main-menu-mobile {
+  display: none;
+}
+
+/* Mobile Nav Menu */
+
+.main-menu-mobile .logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 400;
+  background: #deeafa;
+}
+
+.main-menu-mobile .logo,
+.main-menu .logo {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.main-menu-mobile .close-icon,
+.main-menu-mobile .menu-icon {
+  width: 30px;
+  padding: 2px;
+  cursor: pointer;
+  display: none;
+}
+
+.main-menu-mobile .menu-icon {
+  display: block;
+}
+
+.main-menu-mobile.active .close-icon {
+  display: block;
+}
+
+.main-menu-mobile.active .menu-icon {
+  display: none;
+}
+
+.main-menu-mobile {
+  position: fixed;
+  inset: 0;
+  height: 66px;
+  overflow: auto;
+  background: #fff;
+  transition: all 100ms ease;
+}
+
+.main-menu-mobile.active {
+  height: 100vh;
+}
+
+.main-menu-mobile .menu-title span {
+  width: 18px;
+  display: flex;
+  transition: all 200ms ease;
+}
+
+.main-menu-mobile .menu-container span.active {
+  transform: rotateZ(-180deg);
+}
+
+.main-menu-mobile .menu-items {
+  margin-top: 66px;
+}
+
+.main-menu-mobile ul {
+  list-style: none;
+  padding: 0;
+}
+
+.main-menu-mobile .menu-title {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 200ms ease;
+}
+
+.main-menu-mobile .menu-items .content {
+  padding: 0px 16px;
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+  max-height: 0;
+  gap: 32px;
+  z-index: 400;
+  overflow: hidden;
+  transition: all 200ms ease;
+}
+
+.main-menu-mobile .menu-items .content.active {
+  max-height: 1000px;
+  padding: 16px;
+}
+
+.main-menu-mobile .content .group {
+  display: block;
+  padding: 8px 0;
+}
+
+.website-content {
+  margin-top: 100px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.8;
+}
+
+.main-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  /* .main-menu .content,
+  .main-menu .menu-bg {
+    min-width: 100%;
+  }
+
+  .main-menu .content img {
+    width: 100%;
+  } */
+
+  .main-menu {
+    display: none;
+  }
+
+  .main-menu-mobile {
+    display: block;
+    font-family: "Roboto", sans-serif;
+  }
+}
